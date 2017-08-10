@@ -1,3 +1,6 @@
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import { Angular2TokenService } from 'angular2-token';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -7,6 +10,8 @@ import { HomePage } from '../pages/home/home';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { PersonProvider } from '../providers/person/person';
+import { CooperProvider } from '../providers/cooper/cooper';
 
 @NgModule({
   declarations: [
@@ -14,6 +19,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage
   ],
   imports: [
+    HttpModule,
+    RouterModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
   ],
@@ -25,7 +32,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    PersonProvider,
+    CooperProvider,
+    Angular2TokenService
   ]
 })
 export class AppModule {}
