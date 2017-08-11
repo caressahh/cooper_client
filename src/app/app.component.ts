@@ -26,7 +26,7 @@ export class MyApp {
     private _tokenService: Angular2TokenService
     ) {
       this._tokenService.init({
-      apiBase: 'https://your-cooper-api.herokuapp.com/api/v1'
+      apiBase: 'https://cm-cooper-api.herokuapp.com/api/v1'
     });
 
 
