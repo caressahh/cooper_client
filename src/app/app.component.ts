@@ -19,9 +19,9 @@ export class MyApp {
 
 
   constructor(
+    private splashScreen: SplashScreen,
     public platform: Platform,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen,
     public alertCtrl: AlertController,
     private _tokenService: Angular2TokenService
     ) {
@@ -29,7 +29,7 @@ export class MyApp {
       apiBase: 'https://cm-cooper-api.herokuapp.com/api/v1'
     });
 
-
+    this.splashScreen.show();
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -41,8 +41,6 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
